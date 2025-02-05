@@ -30,6 +30,11 @@ class ReferralAccount extends Model
     }
 
     // Relations
+    public function referralable()
+    {
+        return $this->morphTo('referralable');
+    }
+
     public function referrals()
     {
         return $this->hasMany(Referral::class, 'referral_account_id', 'id');
