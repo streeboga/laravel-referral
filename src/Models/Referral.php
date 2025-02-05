@@ -20,4 +20,9 @@ class Referral extends Model
     {
         return $this->belongsTo(ReferralAccount::class, 'id', 'referral_account_id');
     }
+
+    public function referrer(): BelongsTo
+    {
+        return $this->belongsTo(ReferralAccount::class, 'referral_account_id', 'id');
+    }  
 }
